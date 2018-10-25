@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        noImageLabel.isHidden = !(chosedImageView.image == nil)
+    }
+    
     func presentWithSource(_ source: UIImagePickerController.SourceType) {
         imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
